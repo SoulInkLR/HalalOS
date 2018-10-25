@@ -1,0 +1,134 @@
+.text
+
+.globl start
+start : 
+	movl 4(%esp), ebx
+	movl 8(%esp), ecx
+	movl 12(%esp), edx
+	movl 16(%esp), esi
+	movl 20(%esp), edi
+	movl $1, %eax
+	int $49
+	ret
+
+	
+.globl getpid
+getpid : 
+	int $49
+	movl $2, %eax
+	ret
+
+	
+.globl getprio
+getprio : 
+	movl 4(%esp), ebx
+	movl $3, %eax
+	int $49
+	ret
+
+	
+.globl chprio
+chprio : 
+	movl 4(%esp), ebx
+	movl 8(%esp), ecx
+	movl $4, %eax
+	int $49
+	ret
+
+
+.globl kill
+kill : 
+	movl 4(%esp), ebx
+	movl $5, %eax
+	int $49
+	ret
+
+	
+.globl waipid
+waitpid : 
+	movl 4(%esp), ebx
+	movl 8(%esp), ecx
+	movl $6, %eax
+	int $49
+	ret
+
+		
+.globl exit
+exit : 
+	movl 4(%esp), ebx
+	movl $7, %eax
+	int $49
+	ret
+
+	
+.globl current_clock
+current_clock : 
+	movl 4(%esp), ebx
+	movl 8(%esp), ecx
+	movl $8, %eax
+	int $49
+	ret
+
+.globl clock_settings
+clock_settings : 
+	movl 4(%esp), ebx
+	movl 8(%esp), ecx
+	movl $9, %eax
+	int $49
+	ret
+	
+.globl wait_clock
+wait_clock : 
+	movl 4(%esp), ebx
+	movl $10, %eax
+	int $49
+	ret
+
+
+.globl pcreate
+pcreate : 
+	movl 4(%esp), ebx
+	movl $11, %eax
+	int $49
+	ret
+
+.globl pdelete
+pdelete : 
+	movl 4(%esp), ebx
+	movl $12, %eax
+	int $49
+	ret
+
+
+.globl psend
+psend : 
+	movl 4(%esp), ebx
+	movl 8(%esp), ecx
+	movl $13, %eax
+	int $49
+	ret
+
+
+.globl preceive
+preceive : 
+	movl 4(%esp), ebx
+	movl 8(%esp), ecx
+	movl $14, %eax
+	int $49
+	ret
+
+.globl pcount
+pcount : 
+
+	movl 4(%esp), ebx
+	movl 8(%esp), ecx
+	movl $15, %eax	
+	int $49
+	ret
+
+.globl preset
+preset : 
+	movl 4(%esp), ebx
+	movl $16, %eax
+	int $49
+	ret

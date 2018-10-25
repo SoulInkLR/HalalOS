@@ -1,0 +1,3 @@
+
+.text
+	.globl handler_page_fault
